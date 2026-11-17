@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SecureVault | Share File</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- ================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================= -->
+
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                🔐
+            </div>
+
+            <div>
+
+                <h2>
+                    SecureVault
+                </h2>
+
+                <span>
+                    Private • Secure • Yours
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="dashboard-nav">
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+
+            <a
+                href="index.html"
+                class="nav-item"
+            >
+                <span>📁</span>
+                My Files
+            </a>
+
+
+            <a
+                href="shared.html"
+                class="nav-item"
+            >
+                <span>📤</span>
+                Shared Files
+            </a>
+
+
+            <a
+                href="create-share.html"
+                class="nav-item active"
+            >
+                <span>🔗</span>
+                Share File
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="security-badge">
+
+                <div class="security-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Vault Protected
+                    </strong>
+
+                    <small>
+                        Your files are secure
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================================= -->
+    <!-- MAIN -->
+    <!-- ================================= -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="dashboard-topbar">
+
+            <div>
+
+                <p class="dashboard-label">
+                    SECUREVAULT
+                </p>
+
+                <h1>
+                    Share File
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="secure-status">
+
+                    <span class="status-dot"></span>
+
+                    System Secure
+
+                </div>
+
+
+                <div
+                    class="user-avatar"
+                    id="userAvatar"
+                >
+                    Y
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================================= -->
+        <!-- SHARE HEADER -->
+        <!-- ================================= -->
+
+        <section class="upload-page-header">
+
+            <span class="panel-label">
+                SECURE SHARING
+            </span>
+
+            <h2>
+                Share a file securely
+            </h2>
+
+            <p>
+                Create a protected link with password
+                and expiry controls.
+            </p>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- SHARE FORM -->
+        <!-- ================================= -->
+
+        <section class="upload-container">
+
+
+            <div class="share-form">
+
+
+                <!-- FILE -->
+
+                <div class="form-group">
+
+                    <label for="fileSelect">
+                        Select File
+                    </label>
+
+                    <select
+                        id="fileSelect"
+                        class="share-input"
+                    >
+
+                        <option value="">
+                            Loading your files...
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="recipientEmail">
+                        Recipient Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="recipientEmail"
+                        class="share-input"
+                        placeholder="recipient@example.com"
+                    >
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="sharePassword">
+                        Share Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="sharePassword"
+                        class="share-input"
+                        placeholder="Create a secure password"
+                    >
+
+                    <small class="input-hint">
+                        The recipient will need this password
+                        to access the file.
+                    </small>
+
+                </div>
+
+
+
+                <!-- EXPIRY -->
+
+                <div class="form-group">
+
+                    <label for="expiry">
+                        Link Expiry
+                    </label>
+
+                    <select
+                        id="expiry"
+                        class="share-input"
+                    >
+
+                        <option value="1h">
+                            1 Hour
+                        </option>
+
+                        <option value="24h">
+                            24 Hours
+                        </option>
+
+                        <option value="7d" selected>
+                            7 Days
+                        </option>
+
+                        <option value="">
+                            Never Expires
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- DOWNLOAD LIMIT -->
+
+                <div class="form-group">
+
+                    <label for="maxDownloads">
+                        Download Limit
+                    </label>
+
+                    <select
+                        id="maxDownloads"
+                        class="share-input"
+                    >
+
+                        <option value="" selected>
+                            Unlimited
+                        </option>
+
+                        <option value="1">
+                            1 download (one-time link)
+                        </option>
+
+                        <option value="3">
+                            3 downloads
+                        </option>
+
+                        <option value="5">
+                            5 downloads
+                        </option>
+
+                        <option value="10">
+                            10 downloads
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- BUTTON -->
+
+                <button
+                    id="generateShareBtn"
+                    class="primary-action share-generate-btn"
+                >
+                    🔗 Generate Secure Link
+                </button>
+
+
+                <!-- MESSAGE -->
+
+                <p
+                    id="shareMessage"
+                    class="upload-message"
+                ></p>
+
+
+                <!-- GENERATED LINK -->
+
+                <div
+                    id="shareResult"
+                    class="share-result"
+                    style="display:none;"
+                >
+
+                    <div class="share-result-header">
+
+                        <span>
+                            🔐 Share Link Generated
+                        </span>
+
+                    </div>
+
+
+                    <div class="share-link-row">
+
+                        <input
+                            type="text"
+                            id="shareLink"
+                            readonly
+                        >
+
+                        <button
+                            id="copyShareBtn"
+                            type="button"
+                        >
+                            📋 Copy
+                        </button>
+
+                    </div>
+
+
+                    <p>
+                        Send this link and the share password
+                        to the recipient securely.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- SECURITY INFO -->
+        <!-- ================================= -->
+
+        <section class="upload-security-grid">
+
+
+            <div class="upload-security-card">
+
+                <span>
+                    🔐
+                </span>
+
+                <div>
+
+                    <strong>
+                        Password Protected
+                    </strong>
+
+                    <small>
+                        Only users with the correct
+                        password can access the file.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="upload-security-card">
+
+                <span>
+                    ⏰
+                </span>
+
+                <div>
+
+                    <strong>
+                        Automatic Expiry
+                    </strong>
+
+                    <small>
+                        Your sharing link automatically
+                        expires after the selected period.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="upload-security-card">
+
+                <span>
+                    🛡️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Secure Access
+                    </strong>
+
+                    <small>
+                        File access is protected by
+                        SecureVault authentication.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                🔐 SecureVault
+            </span>
+
+            <span>
+                Your files. Your control.
+            </span>
+
+        </footer>
+
+
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="create-share.js"></script>
+
+</body>
+
+</html>

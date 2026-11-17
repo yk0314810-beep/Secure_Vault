@@ -1,0 +1,465 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SecureVault | Shared Files</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- ================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================= -->
+
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                🔐
+            </div>
+
+            <div>
+
+                <h2>
+                    SecureVault
+                </h2>
+
+                <span>
+                    Private • Secure • Yours
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="dashboard-nav">
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+
+            <a
+                href="files.html"
+                class="nav-item"
+            >
+                <span>📁</span>
+                My Files
+            </a>
+
+
+            <a
+                href="shared.html"
+                class="nav-item active"
+            >
+                <span>📤</span>
+                Shared Files
+            </a>
+
+
+            <a
+                href="create-share.html"
+                class="nav-item"
+            >
+                <span>🔗</span>
+                Share File
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="security-badge">
+
+                <div class="security-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Vault Protected
+                    </strong>
+
+                    <small>
+                        Your files are secure
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================================= -->
+    <!-- MAIN -->
+    <!-- ================================= -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="dashboard-topbar">
+
+            <div>
+
+                <p class="dashboard-label">
+                    SECUREVAULT
+                </p>
+
+                <h1>
+                    Shared Files
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="secure-status">
+
+                    <span class="status-dot"></span>
+
+                    System Secure
+
+                </div>
+
+
+                <div
+                    class="user-avatar"
+                    id="userAvatar"
+                >
+                    Y
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================================= -->
+        <!-- PAGE HEADER -->
+        <!-- ================================= -->
+
+        <section class="files-header">
+
+            <div>
+
+                <span class="panel-label">
+                    FILE SHARING
+                </span>
+
+                <h2>
+                    Shared Files
+                </h2>
+
+                <p>
+                    Manage and monitor the files
+                    you have securely shared.
+                </p>
+
+            </div>
+
+
+            <a
+                href="create-share.html"
+                class="primary-action"
+            >
+                🔗 Share a File
+            </a>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- SHARING OVERVIEW -->
+        <!-- ================================= -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon files-icon">
+                        📤
+                    </div>
+
+                </div>
+
+                <p>
+                    Total Shares
+                </p>
+
+                <h3 id="totalShares">
+                    0
+                </h3>
+
+                <span class="stat-description">
+                    Files you have shared
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon secure-icon">
+                        🔓
+                    </div>
+
+                </div>
+
+                <p>
+                    Active Shares
+                </p>
+
+                <h3 id="activeShares">
+                    0
+                </h3>
+
+                <span class="stat-description">
+                    Currently accessible
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon expiry-icon">
+                        ⏰
+                    </div>
+
+                </div>
+
+                <p>
+                    Expiring Soon
+                </p>
+
+                <h3 id="expiringShares">
+                    0
+                </h3>
+
+                <span class="stat-description">
+                    Need your attention
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon shared-icon">
+                        🛡️
+                    </div>
+
+                    <span class="secure-check">
+                        ✓
+                    </span>
+
+                </div>
+
+                <p>
+                    Share Security
+                </p>
+
+                <h3>
+                    Protected
+                </h3>
+
+                <span class="stat-description">
+                    Password protected sharing
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- TOOLBAR -->
+        <!-- ================================= -->
+
+        <section class="files-toolbar">
+
+            <div class="file-search">
+
+                <span>
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search shared files..."
+                >
+
+            </div>
+
+
+            <button
+                id="refreshBtn"
+                class="refresh-btn"
+            >
+                🔄 Refresh
+            </button>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- SHARED FILES PANEL -->
+        <!-- ================================= -->
+
+        <section class="files-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        YOUR SHARES
+                    </span>
+
+                    <h2>
+                        Shared Files
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="sharedFiles"
+                class="files-list"
+            >
+
+                <div class="files-loading">
+
+                    <div>
+                        🔐
+                    </div>
+
+                    <p>
+                        Loading shared files...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- EMPTY STATE -->
+        <!-- ================================= -->
+
+        <section
+            id="emptyState"
+            class="files-empty"
+            style="display: none;"
+        >
+
+            <div class="empty-icon">
+                🔗
+            </div>
+
+            <h3>
+                No shared files
+            </h3>
+
+            <p>
+                You haven't shared any files yet.
+            </p>
+
+            <a
+                href="create-share.html"
+                class="empty-action"
+            >
+                🔗 Share Your First File
+            </a>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- FOOTER -->
+        <!-- ================================= -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                🔐 SecureVault
+            </span>
+
+            <span>
+                Your files. Your control.
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <script src="auth.js"></script>
+    <script src="shared.js"></script>
+
+</body>
+
+</html>
+```

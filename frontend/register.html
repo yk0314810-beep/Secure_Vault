@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureVault - Create Account</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="sv-register-page">
+
+        <!-- BRANDING -->
+        <div class="sv-register-header">
+
+            <div class="sv-register-icon">
+                🔐
+            </div>
+
+            <h1>SecureVault</h1>
+
+            <p>
+                Create your secure vault account.
+            </p>
+
+        </div>
+
+
+        <!-- REGISTER CARD -->
+        <div class="sv-register-card">
+
+            <div class="sv-register-title">
+
+                <h2>Create Account</h2>
+
+                <p>
+                    Start protecting your files today.
+                </p>
+
+            </div>
+
+
+            <form id="registerForm" novalidate>
+
+
+                <!-- FULL NAME -->
+                <div class="sv-form-group">
+
+                    <div class="sv-input-wrapper">
+
+                        <span class="sv-input-icon">👤</span>
+
+                        <input
+                            type="text"
+                            id="registerName"
+                            name="name"
+                            placeholder=" "
+                            autocomplete="name"
+                        >
+
+                        <label for="registerName">
+                            Full Name
+                        </label>
+
+                    </div>
+
+                    <p
+                        class="sv-field-error"
+                        id="nameError"
+                    ></p>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="sv-form-group">
+
+                    <div class="sv-input-wrapper">
+
+                        <span class="sv-input-icon">✉</span>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            name="email"
+                            placeholder=" "
+                            autocomplete="email"
+                        >
+
+                        <label for="registerEmail">
+                            Email Address
+                        </label>
+
+                    </div>
+
+                    <p
+                        class="sv-field-error"
+                        id="emailError"
+                    ></p>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="sv-form-group">
+
+                    <div class="sv-input-wrapper">
+
+                        <span class="sv-input-icon">🔒</span>
+
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            name="password"
+                            placeholder=" "
+                            autocomplete="new-password"
+                        >
+
+                        <label for="registerPassword">
+                            Password
+                        </label>
+
+                        <button
+                            type="button"
+                            class="sv-password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                    <p
+                        class="sv-field-error"
+                        id="passwordError"
+                    ></p>
+
+
+                    <!-- PASSWORD REQUIREMENTS -->
+                    <div class="sv-password-requirements">
+
+                        <p class="sv-requirements-title">
+                            Password must contain:
+                        </p>
+
+                        <div
+                            class="sv-requirement"
+                            id="reqLength"
+                        >
+                            <span>○</span>
+                            At least 8 characters
+                        </div>
+
+                        <div
+                            class="sv-requirement"
+                            id="reqUppercase"
+                        >
+                            <span>○</span>
+                            One uppercase letter
+                        </div>
+
+                        <div
+                            class="sv-requirement"
+                            id="reqNumber"
+                        >
+                            <span>○</span>
+                            One number
+                        </div>
+
+                        <div
+                            class="sv-requirement"
+                            id="reqSpecial"
+                        >
+                            <span>○</span>
+                            One special character
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+                <div class="sv-form-group">
+
+                    <div class="sv-input-wrapper">
+
+                        <span class="sv-input-icon">🔒</span>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder=" "
+                            autocomplete="new-password"
+                        >
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <button
+                            type="button"
+                            class="sv-password-toggle"
+                            id="confirmPasswordToggle"
+                            aria-label="Show password"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                    <p
+                        class="sv-field-error"
+                        id="confirmPasswordError"
+                    ></p>
+
+                </div>
+
+
+                <!-- PASSWORD STRENGTH -->
+                <div class="sv-strength-container">
+
+                    <div class="sv-strength-header">
+
+                        <span>Password strength</span>
+
+                        <span id="passwordStrengthText">
+                            —
+                        </span>
+
+                    </div>
+
+                    <div class="sv-strength-bar">
+
+                        <div
+                            id="passwordStrengthBar"
+                            class="sv-strength-progress"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GLOBAL MESSAGE -->
+                <p
+                    id="registerMessage"
+                    class="sv-register-message"
+                ></p>
+
+
+                <!-- CREATE ACCOUNT -->
+                <button
+                    type="submit"
+                    id="registerBtn"
+                    class="sv-register-btn"
+                    disabled
+                >
+                    Create Account 🔐
+                </button>
+
+
+                <!-- DIVIDER -->
+                <div class="sv-divider">
+
+                    <span></span>
+
+                    <p>OR</p>
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- GOOGLE -->
+                <button
+                    type="button"
+                    id="googleSignupBtn"
+                    class="sv-google-btn"
+                >
+                    <span class="sv-google-icon">
+                        G
+                    </span>
+
+                    Continue with Google
+
+                </button>
+
+
+            </form>
+
+
+            <!-- LOGIN LINK -->
+            <div class="sv-login-link">
+
+                <span>
+                    Already have an account?
+                </span>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <p class="sv-register-footer">
+            🔒 Your security is our priority.
+        </p>
+
+    </div>
+
+
+    <!-- JS WILL BE ADDED IN STEP 2 -->
+    <script src="register.js"></script>
+
+</body>
+
+</html>
+

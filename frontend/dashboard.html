@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SecureVault | Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- ================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================= -->
+
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                🔐
+            </div>
+
+            <div>
+
+                <h2>
+                    SecureVault
+                </h2>
+
+                <span>
+                    Private • Secure • Yours
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- NAVIGATION -->
+        <!-- ================================= -->
+
+        <nav class="dashboard-nav">
+
+            <a
+                href="dashboard.html"
+                class="nav-item active"
+            >
+
+                <span>
+                    ⌂
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="files.html"
+                class="nav-item"
+            >
+
+                <span>
+                    📁
+                </span>
+
+                My Files
+
+            </a>
+
+
+            <a
+                href="shared.html"
+                class="nav-item"
+            >
+
+                <span>
+                    📤
+                </span>
+
+                Shared Files
+
+            </a>
+
+
+            <a
+                href="create-share.html"
+                class="nav-item"
+            >
+
+                <span>
+                    🔗
+                </span>
+
+                Share File
+
+            </a>
+
+        </nav>
+
+
+        <!-- ================================= -->
+        <!-- SIDEBAR BOTTOM -->
+        <!-- ================================= -->
+
+        <div class="sidebar-bottom">
+
+            <div class="security-badge">
+
+                <div class="security-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Vault Protected
+                    </strong>
+
+                    <small>
+                        Your files are secure
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+
+                <span>
+                    ↪
+                </span>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================= -->
+
+    <main class="dashboard-main">
+
+
+        <!-- ================================= -->
+        <!-- TOP BAR -->
+        <!-- ================================= -->
+
+        <header class="dashboard-topbar">
+
+            <div>
+
+                <p class="dashboard-label">
+                    SECUREVAULT
+                </p>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="secure-status">
+
+                    <span class="status-dot"></span>
+
+                    System Secure
+
+                </div>
+
+
+                <div
+                    class="user-avatar"
+                    id="userAvatar"
+                >
+                    Y
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================================= -->
+        <!-- HERO -->
+        <!-- ================================= -->
+
+        <section class="dashboard-hero">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    🔐 YOUR PRIVATE VAULT
+                </span>
+
+
+                <h2>
+
+                    Welcome back,
+
+                    <span id="userName">
+                        Yatnesh
+                    </span>
+
+                    👋
+
+                </h2>
+
+
+                <p>
+
+                    Everything you need to protect,
+                    manage and share your files —
+                    all in one secure place.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        href="index.html"
+                        class="primary-action"
+                    >
+
+                        ⬆️ Upload File
+
+                    </a>
+
+
+                    <a
+                        href="shared.html"
+                        class="secondary-action"
+                    >
+
+                        📤 View Shared Files
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="vault-orbit">
+
+                    <div
+                        class="orbit-ring ring-one"
+                    ></div>
+
+                    <div
+                        class="orbit-ring ring-two"
+                    ></div>
+
+                    <div class="vault-core">
+                        🔐
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- STATISTICS -->
+        <!-- ================================= -->
+
+        <section class="stats-grid">
+
+
+            <!-- TOTAL FILES -->
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div
+                        class="stat-icon files-icon"
+                    >
+                        📁
+                    </div>
+
+                    <span class="stat-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Total Files
+                </p>
+
+
+                <h3 id="totalFiles">
+                    0
+                </h3>
+
+
+                <span class="stat-description">
+                    Files in your vault
+                </span>
+
+            </div>
+
+
+
+            <!-- SHARED FILES -->
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div
+                        class="stat-icon shared-icon"
+                    >
+                        📤
+                    </div>
+
+                    <span class="stat-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Shared Files
+                </p>
+
+
+                <h3 id="sharedFiles">
+                    0
+                </h3>
+
+
+                <span class="stat-description">
+                    Active & shared
+                </span>
+
+            </div>
+
+
+
+            <!-- EXPIRING -->
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div
+                        class="stat-icon expiry-icon"
+                    >
+                        ⏰
+                    </div>
+
+                    <span class="stat-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Expiring Soon
+                </p>
+
+
+                <h3 id="expiringFiles">
+                    0
+                </h3>
+
+
+                <span class="stat-description">
+                    Need your attention
+                </span>
+
+            </div>
+
+
+
+            <!-- SECURITY -->
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div
+                        class="stat-icon secure-icon"
+                    >
+                        🛡️
+                    </div>
+
+                    <span class="secure-check">
+                        ✓
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Security
+                </p>
+
+
+                <h3>
+                    Protected
+                </h3>
+
+
+                <span class="stat-description">
+                    Vault is secured
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- CONTENT GRID -->
+        <!-- ================================= -->
+
+        <section class="dashboard-content-grid">
+
+
+            <!-- ================================= -->
+            <!-- RECENT FILES -->
+            <!-- ================================= -->
+
+            <div class="dashboard-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            YOUR VAULT
+                        </span>
+
+                        <h2>
+                            Recent Files
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                        href="files.html"
+                        class="view-all"
+                    >
+                        View all →
+                    </a>
+
+                </div>
+
+
+                <div id="recentFiles">
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            📂
+                        </div>
+
+                        <h3>
+                            Your vault is empty
+                        </h3>
+
+                        <p>
+                            Upload your first file
+                            to get started.
+                        </p>
+
+
+                        <a
+                            href="index.html"
+                            class="empty-action"
+                        >
+                            Upload File
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- SECURITY PANEL -->
+            <!-- ================================= -->
+
+            <div
+                class="dashboard-panel security-panel"
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-label">
+                            SECURITY
+                        </span>
+
+                        <h2>
+                            Vault Status
+                        </h2>
+
+                    </div>
+
+
+                    <div class="security-check">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div class="security-main">
+
+                    <div class="security-circle">
+
+                        <div>
+
+                            <strong>
+                                SECURE
+                            </strong>
+
+                            <small>
+                                100%
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="security-message">
+
+                        Your SecureVault is
+                        currently protected.
+
+                    </p>
+
+                </div>
+
+
+                <div class="security-list">
+
+
+                    <div>
+
+                        <span>
+                            🔐
+                        </span>
+
+                        <p>
+                            Authentication
+                        </p>
+
+                        <strong>
+                            Active
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            🔑
+                        </span>
+
+                        <p>
+                            Password Protection
+                        </p>
+
+                        <strong>
+                            Active
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            ⏰
+                        </span>
+
+                        <p>
+                            Share Expiry
+                        </p>
+
+                        <strong>
+                            Active
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- RECENT ACTIVITY -->
+        <!-- ================================= -->
+
+        <section class="activity-section">
+
+
+            <div class="activity-header">
+
+                <div>
+
+                    <span class="panel-label">
+                        ACTIVITY
+                    </span>
+
+                    <h2>
+                        Recent Activity
+                    </h2>
+
+                </div>
+
+
+                <span class="activity-live">
+                    ● LIVE
+                </span>
+
+            </div>
+
+
+            <div
+                class="activity-list"
+                id="activityList"
+            >
+
+
+                <!-- SECURITY ACTIVITY -->
+
+                <div class="activity-item">
+
+                    <div class="activity-icon">
+                        🔐
+                    </div>
+
+
+                    <div class="activity-info">
+
+                        <strong>
+                            SecureVault is protected
+                        </strong>
+
+                        <small>
+                            Your vault security is active
+                        </small>
+
+                    </div>
+
+
+                    <span class="activity-time">
+                        Now
+                    </span>
+
+                </div>
+
+
+
+                <!-- FILE ACTIVITY -->
+
+                <div class="activity-item">
+
+                    <div class="activity-icon">
+                        📁
+                    </div>
+
+
+                    <div class="activity-info">
+
+                        <strong>
+                            Files are ready
+                        </strong>
+
+                        <small>
+                            Your uploaded files are available
+                        </small>
+
+                    </div>
+
+
+                    <span class="activity-time">
+                        Today
+                    </span>
+
+                </div>
+
+
+
+                <!-- AUTH ACTIVITY -->
+
+                <div class="activity-item">
+
+                    <div class="activity-icon">
+                        🛡️
+                    </div>
+
+
+                    <div class="activity-info">
+
+                        <strong>
+                            Authentication active
+                        </strong>
+
+                        <small>
+                            Your account is protected with JWT
+                        </small>
+
+                    </div>
+
+
+                    <span class="activity-time">
+                        Active
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- QUICK ACTIONS -->
+        <!-- ================================= -->
+
+        <section class="quick-actions">
+
+
+            <div>
+
+                <span class="panel-label">
+                    QUICK ACTIONS
+                </span>
+
+
+                <h2>
+                    What do you want to do?
+                </h2>
+
+            </div>
+
+
+
+            <div class="quick-action-grid">
+
+
+                <!-- ================================= -->
+                <!-- UPLOAD FILE -->
+                <!-- ================================= -->
+
+                <a
+                    href="index.html"
+                    class="quick-action-card"
+                >
+
+                    <span>
+                        ⬆️
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            Upload File
+                        </strong>
+
+
+                        <small>
+                            Add a new file
+                            to your vault
+                        </small>
+
+                    </div>
+
+
+                    <b>
+                        →
+                    </b>
+
+                </a>
+
+
+
+                <!-- ================================= -->
+                <!-- SHARED FILES -->
+                <!-- ================================= -->
+
+                <a
+                    href="shared.html"
+                    class="quick-action-card"
+                >
+
+                    <span>
+                        📤
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            Shared Files
+                        </strong>
+
+
+                        <small>
+                            Manage your
+                            shared files
+                        </small>
+
+                    </div>
+
+
+                    <b>
+                        →
+                    </b>
+
+                </a>
+
+
+
+                <!-- ================================= -->
+                <!-- SHARE FILE -->
+                <!-- ================================= -->
+
+                <a
+                    href="create-share.html"
+                    class="quick-action-card"
+                >
+
+                    <span>
+                        🔗
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            Share a File
+                        </strong>
+
+
+                        <small>
+                            Securely share
+                            your files
+                        </small>
+
+                    </div>
+
+
+                    <b>
+                        →
+                    </b>
+
+                </a>
+
+
+
+                <!-- ================================= -->
+                <!-- MY FILES -->
+                <!-- ================================= -->
+
+                <a
+                    href="files.html"
+                    class="quick-action-card"
+                >
+
+                    <span>
+                        📁
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            My Files
+                        </strong>
+
+
+                        <small>
+                            View and manage
+                            your files
+                        </small>
+
+                    </div>
+
+
+                    <b>
+                        →
+                    </b>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- FOOTER -->
+        <!-- ================================= -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                🔐 SecureVault
+            </span>
+
+
+            <span>
+                Your files. Your control.
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- ================================= -->
+    <!-- DASHBOARD JAVASCRIPT -->
+    <!-- ================================= -->
+
+    <script src="auth.js"></script>
+    <script src="dashboard.js"></script>
+
+
+</body>
+
+</html>

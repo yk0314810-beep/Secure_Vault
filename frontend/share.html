@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureVault - Shared File</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="share-container">
+
+        <div class="vault-icon">🔐</div>
+
+        <h1>SecureVault</h1>
+
+        <p class="subtitle">
+            Someone has securely shared a file with you.
+        </p>
+
+        <div class="file-card">
+
+            <p>📁 Shared File</p>
+
+            <h2 id="fileName">Loading...</h2>
+
+            <label for="password">
+                Enter Share Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+            >
+
+            <button id="accessBtn">
+                Access File 🔓
+            </button>
+
+            <p id="message"></p>
+
+        </div>
+
+    </div>
+
+    <script src="share.js"></script>
+
+</body>
+
+</html>

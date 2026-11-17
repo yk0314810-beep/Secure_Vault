@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SecureVault | My Files</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- ================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================= -->
+
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                🔐
+            </div>
+
+            <div>
+
+                <h2>
+                    SecureVault
+                </h2>
+
+                <span>
+                    Private • Secure • Yours
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="dashboard-nav">
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+
+            <a
+                href="files.html"
+                class="nav-item active"
+            >
+                <span>📁</span>
+                My Files
+            </a>
+
+
+            <a
+                href="shared.html"
+                class="nav-item"
+            >
+                <span>📤</span>
+                Shared Files
+            </a>
+
+
+            <a
+                href="create-share.html"
+                class="nav-item"
+            >
+                <span>🔗</span>
+                Share File
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="security-badge">
+
+                <div class="security-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Vault Protected
+                    </strong>
+
+                    <small>
+                        Your files are secure
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+
+                <span>↪</span>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================================= -->
+    <!-- MAIN -->
+    <!-- ================================= -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="dashboard-topbar">
+
+            <div>
+
+                <p class="dashboard-label">
+                    SECUREVAULT
+                </p>
+
+                <h1>
+                    My Files
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="secure-status">
+
+                    <span class="status-dot"></span>
+
+                    System Secure
+
+                </div>
+
+
+                <div
+                    class="user-avatar"
+                    id="userAvatar"
+                >
+                    Y
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================================= -->
+        <!-- FILE HEADER -->
+        <!-- ================================= -->
+
+        <section class="files-header">
+
+            <div>
+
+                <span class="panel-label">
+                    YOUR VAULT
+                </span>
+
+                <h2>
+                    All Files
+                </h2>
+
+                <p>
+                    Manage your securely stored files.
+                </p>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="primary-action"
+            >
+                ⬆️ Upload File
+            </a>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- SEARCH + REFRESH -->
+        <!-- ================================= -->
+
+        <section class="files-toolbar">
+
+            <div class="file-search">
+
+                <span>
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search files..."
+                >
+
+            </div>
+
+
+            <button
+                id="refreshBtn"
+                class="refresh-btn"
+            >
+                🔄 Refresh
+            </button>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- FILE COUNT -->
+        <!-- ================================= -->
+
+        <div class="files-summary">
+
+            <span>
+                Total Files:
+            </span>
+
+            <strong id="fileCount">
+                0
+            </strong>
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- FILE LIST -->
+        <!-- ================================= -->
+
+        <section class="files-panel">
+
+            <div
+                id="filesList"
+                class="files-list"
+            >
+
+                <!-- JS WILL LOAD FILES HERE -->
+
+                <div class="files-loading">
+
+                    <div>
+                        🔐
+                    </div>
+
+                    <p>
+                        Loading your files...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- EMPTY STATE -->
+        <!-- ================================= -->
+
+        <section
+            id="emptyState"
+            class="files-empty"
+            style="display: none;"
+        >
+
+            <div class="empty-icon">
+                📂
+            </div>
+
+            <h3>
+                Your vault is empty
+            </h3>
+
+            <p>
+                Upload your first file
+                to get started.
+            </p>
+
+            <a
+                href="index.html"
+                class="empty-action"
+            >
+                ⬆️ Upload File
+            </a>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- FOOTER -->
+        <!-- ================================= -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                🔐 SecureVault
+            </span>
+
+            <span>
+                Your files. Your control.
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <script src="auth.js"></script>
+    <script src="files.js"></script>
+
+</body>
+
+</html>

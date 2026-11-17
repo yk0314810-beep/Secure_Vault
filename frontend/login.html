@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureVault - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="share-container">
+
+        <div class="vault-icon">🔐</div>
+
+        <h1>SecureVault</h1>
+
+        <p class="subtitle">
+            Login to access your SecureVault account.
+        </p>
+
+        <div class="file-card">
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+            >
+
+
+            <label for="password">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+            >
+            <label>
+                <input
+                    type="checkbox"
+                    id="rememberDevice"
+                >
+                Remember this device
+            </label>
+
+
+            <button id="loginBtn">
+                Login 🔐
+            </button>
+
+
+            <p id="message"></p>
+
+        </div>
+
+    </div>
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

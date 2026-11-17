@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureVault - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <main class="dashboard-main">
+
+        <div class="dashboard-topbar">
+
+            <div>
+                <h1>Admin Dashboard 👑</h1>
+                <p>SecureVault system overview</p>
+            </div>
+
+            <div class="secure-status">
+                🔐 Admin Access
+            </div>
+
+        </div>
+
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <span>👥</span>
+                <h3>Total Users</h3>
+                <strong id="totalUsers">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>📁</span>
+                <h3>Total Files</h3>
+                <strong id="totalFiles">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>🔗</span>
+                <h3>Total Shares</h3>
+                <strong id="totalShares">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>💾</span>
+                <h3>Storage Used</h3>
+                <strong id="totalStorage">0 KB</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>🟢</span>
+                <h3>Active Shares</h3>
+                <strong id="activeShares">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>⏰</span>
+                <h3>Expired Shares</h3>
+                <strong id="expiredShares">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>🔒</span>
+                <h3>Revoked Shares</h3>
+                <strong id="revokedShares">0</strong>
+            </div>
+
+        </section>
+
+        <section class="admin-users-section">
+
+    <div class="admin-section-header">
+        <div>
+            <h2>👥 User Management</h2>
+            <p>View all SecureVault users</p>
+        </div>
+    </div>
+
+    <div class="admin-users-table-wrapper">
+
+        <table class="admin-users-table">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Role</th>
+                    <th>Joined</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="usersTableBody">
+
+                <tr>
+                    <td colspan="8">
+                        Loading users...
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<section class="admin-files-section">
+
+    <div class="admin-section-header">
+        <div>
+            <h2>📁 File Management</h2>
+            <p>View all files uploaded to SecureVault</p>
+        </div>
+    </div>
+
+    <div class="admin-files-table-wrapper">
+
+        <table class="admin-files-table">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>File Name</th>
+                    <th>Owner</th>
+                    <th>Email</th>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>Uploaded</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="filesTableBody">
+
+                <tr>
+                    <td colspan="8">
+                        Loading files...
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+        <p id="adminMessage"></p>
+
+    </main>
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

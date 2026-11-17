@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SecureVault | Upload File</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- ================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================= -->
+
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                🔐
+            </div>
+
+            <div>
+
+                <h2>
+                    SecureVault
+                </h2>
+
+                <span>
+                    Private • Secure • Yours
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="dashboard-nav">
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+
+            <a
+                href="index.html"
+                class="nav-item active"
+            >
+                <span>📁</span>
+                My Files
+            </a>
+
+
+            <a
+                href="shared.html"
+                class="nav-item"
+            >
+                <span>📤</span>
+                Shared Files
+            </a>
+
+
+            <a
+                href="create-share.html"
+                class="nav-item"
+            >
+                <span>🔗</span>
+                Share File
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <div class="security-badge">
+
+                <div class="security-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Vault Protected
+                    </strong>
+
+                    <small>
+                        Your files are secure
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================= -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="dashboard-topbar">
+
+            <div>
+
+                <p class="dashboard-label">
+                    SECUREVAULT
+                </p>
+
+                <h1>
+                    Upload File
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="secure-status">
+
+                    <span class="status-dot"></span>
+
+                    System Secure
+
+                </div>
+
+
+                <div
+                    class="user-avatar"
+                    id="userAvatar"
+                >
+                    Y
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================================= -->
+        <!-- UPLOAD HEADER -->
+        <!-- ================================= -->
+
+        <section class="upload-page-header">
+
+            <span class="panel-label">
+                PRIVATE VAULT
+            </span>
+
+            <h2>
+                Secure File Upload
+            </h2>
+
+            <p>
+                Upload your files directly into your
+                encrypted SecureVault.
+            </p>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- UPLOAD AREA -->
+        <!-- ================================= -->
+
+        <section class="upload-container">
+
+
+            <!-- DROP ZONE -->
+
+            <div
+                class="upload-dropzone"
+                id="dropZone"
+            >
+
+                <div class="upload-icon">
+                    ☁️
+                </div>
+
+
+                <h3>
+                    Drop your file here
+                </h3>
+
+
+                <p>
+                    or choose a file from your device
+                </p>
+
+
+                <label
+                    for="fileInput"
+                    class="upload-select-btn"
+                >
+                    📎 Choose File
+                </label>
+
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    hidden
+                >
+
+
+                <small>
+                    Your file will be securely uploaded
+                    to your private vault.
+                </small>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- SELECTED FILE -->
+            <!-- ================================= -->
+
+            <div
+                class="selected-file-card"
+                id="selectedFileCard"
+                style="display: none;"
+            >
+
+                <div class="selected-file-icon">
+                    📄
+                </div>
+
+
+                <div class="selected-file-info">
+
+                    <strong id="selectedFileName">
+                        file.txt
+                    </strong>
+
+                    <small id="selectedFileSize">
+                        0 KB
+                    </small>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="remove-file-btn"
+                    id="removeFileBtn"
+                    title="Remove file"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- UPLOAD PROGRESS -->
+            <!-- ================================= -->
+
+            <div
+                class="upload-progress-container"
+                id="uploadProgressContainer"
+                style="display: none;"
+            >
+
+                <div class="upload-progress-top">
+
+                    <span>
+                        Uploading...
+                    </span>
+
+                    <strong id="uploadProgressText">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="upload-progress-bar">
+
+                    <div
+                        class="upload-progress-fill"
+                        id="uploadProgressFill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- MESSAGE -->
+            <!-- ================================= -->
+
+            <div
+                class="upload-message"
+                id="uploadMessage"
+            ></div>
+
+
+
+            <!-- ================================= -->
+            <!-- ACTIONS -->
+            <!-- ================================= -->
+
+            <div class="upload-actions">
+
+                <button
+                    type="button"
+                    class="primary-action upload-btn"
+                    id="uploadBtn"
+                    disabled
+                >
+                    🔐 Upload Securely
+                </button>
+
+
+                <a
+                    href="files.html"
+                    class="secondary-action"
+                >
+                    📁 View My Files
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- SECURITY INFO -->
+        <!-- ================================= -->
+
+        <section class="upload-security-grid">
+
+
+            <div class="upload-security-card">
+
+                <span>
+                    🔐
+                </span>
+
+                <div>
+
+                    <strong>
+                        Secure Storage
+                    </strong>
+
+                    <small>
+                        Your files stay inside
+                        your private vault.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="upload-security-card">
+
+                <span>
+                    🛡️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Protected Access
+                    </strong>
+
+                    <small>
+                        Only authenticated users
+                        can access your files.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="upload-security-card">
+
+                <span>
+                    ⚡
+                </span>
+
+                <div>
+
+                    <strong>
+                        Fast Upload
+                    </strong>
+
+                    <small>
+                        Upload and manage your
+                        files quickly.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                🔐 SecureVault
+            </span>
+
+            <span>
+                Your files. Your control.
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <script src="upload.js"></script>
+
+</body>
+
+</html>
