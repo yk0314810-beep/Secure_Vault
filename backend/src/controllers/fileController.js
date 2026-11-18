@@ -607,6 +607,7 @@ const shareFile = async (req, res) => {
 
                                 message:
                                     "File shared. Email could not be sent, copy the link and send it yourself.",
+                                shareToken,
                                 emailSent: false,
                             });
                         }
