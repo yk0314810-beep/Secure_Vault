@@ -40,7 +40,7 @@ loginBtn.addEventListener("click", async () => {
         // ===============================
 
         const response = await fetch(
-            "http://127.0.0.1:5000/api/auth/login",
+            "/api/auth/login",
             {
                 method: "POST",
 
@@ -131,7 +131,7 @@ async function checkRememberedDevice() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:5000/api/auth/remember-login",
+            "/api/auth/remember-login",
             {
                 method: "POST",
                 credentials: "include"

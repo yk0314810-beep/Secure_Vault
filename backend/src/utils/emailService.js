@@ -5,13 +5,23 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
-    }
+    },
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 10000
 });
 
 const sendShareEmail = async (recipientEmail, fileName, shareToken) => {
 
+    // Render free plan SMTP block karta hai, wahan EMAIL_DISABLED=true rakhenge
+    if (process.env.EMAIL_DISABLED === "true") {
+        throw new Error("Email sending is disabled on this server");
+    }
+
+    const baseUrl = process.env.APP_URL || "http://127.0.0.1:5500";
+
     const shareLink =
-        `http://127.0.0.1:5500/frontend/share.html?token=${encodeURIComponent(shareToken)}`;
+        `${baseUrl}/frontend/share.html?token=${encodeURIComponent(shareToken)}`;
 
     const mailOptions = {
         from: process.env.EMAIL_USER,

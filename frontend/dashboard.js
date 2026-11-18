@@ -78,7 +78,7 @@ const loadDashboard = async () => {
         // =====================================
 
         const profileResponse = await authFetch(
-            "http://127.0.0.1:5000/api/auth/profile",
+            "/api/auth/profile",
             {
                 method: "GET",
 
@@ -134,7 +134,7 @@ const loadDashboard = async () => {
         // =====================================
 
         const filesResponse = await authFetch(
-            "http://127.0.0.1:5000/api/files/",
+            "/api/files/",
             {
                 method: "GET",
             }
@@ -182,7 +182,7 @@ const loadDashboard = async () => {
         // =====================================
 
         const sharedResponse = await authFetch(
-            "http://127.0.0.1:5000/api/files/shared",
+            "/api/files/shared",
             {
                 method: "GET",
             }
@@ -432,7 +432,7 @@ const downloadDashboardFile = async (
         // =================================
 
         const response = await authFetch(
-            `http://127.0.0.1:5000/api/files/${fileId}/download`,
+            `/api/files/${fileId}/download`,
             {
                 method: "GET",
             }

@@ -601,13 +601,13 @@ const shareFile = async (req, res) => {
                                 error
                             );
 
-                            return res.status(500).json({
+                            return res.status(201).json({
 
-                                success: false,
+                                success: true,
 
                                 message:
-                                    "File Shared, but Email Could Not Be Sent"
-
+                                    "File shared. Email could not be sent, copy the link and send it yourself.",
+                                emailSent: false,
                             });
                         }
 

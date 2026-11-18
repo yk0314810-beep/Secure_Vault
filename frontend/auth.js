@@ -11,7 +11,7 @@ async function performLogout() {
         // =========================================
 
         await fetch(
-            "http://127.0.0.1:5000/api/auth/logout",
+            "/api/auth/logout",
             {
                 method: "POST",
                 credentials: "include"

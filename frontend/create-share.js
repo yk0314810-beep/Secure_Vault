@@ -23,8 +23,8 @@ requireAuth();
 // SECUREVAULT - CREATE SHARE
 // =========================================
 
-const API_URL = "http://127.0.0.1:5000/api/files";
-const AUTH_API_URL = "http://127.0.0.1:5000/api/auth";
+const API_URL = "/api/files";
+const AUTH_API_URL = "/api/auth";
 
 
 // =========================================
